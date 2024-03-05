@@ -46,6 +46,8 @@ public class Note extends JFrame {
                 	downtextchange();
                 } else if(e.isControlDown() && e.getKeyCode() == KeyEvent.VK_E) {
                 	fontchange();
+                } else if(e.isControlDown() && e.getKeyCode() == KeyEvent.VK_R) {
+                	DrawSentence();
                 }
             }
 
@@ -81,7 +83,7 @@ public class Note extends JFrame {
         }
     }
 
-    private void textchange() {
+    private void textchange() {//q
     	StyledDocument doc = textPane.getStyledDocument();
     	int start = textPane.getSelectionStart();
     	int end = textPane.getSelectionEnd();
@@ -93,7 +95,7 @@ public class Note extends JFrame {
     	}
     }
     
-    private void fontchange() {
+    private void fontchange() {//w
     	StyledDocument doc = textPane.getStyledDocument();
     	int start = textPane.getSelectionStart();
     	int end = textPane.getSelectionEnd();
@@ -107,7 +109,7 @@ public class Note extends JFrame {
     	}
     }
     
-    private void downtextchange() {
+    private void downtextchange() {//e
     	StyledDocument doc = textPane.getStyledDocument();
     	int start = textPane.getSelectionStart();
     	int end = textPane.getSelectionEnd();
@@ -115,6 +117,18 @@ public class Note extends JFrame {
     	if(end > start) {
     		SimpleAttributeSet attr = new SimpleAttributeSet();
     		StyleConstants.setSubscript(attr, !StyleConstants.isSubscript(attr));
+    		doc.setCharacterAttributes(start, end - start, attr, false);
+    	}
+    }
+    
+    private void DrawSentence() {//r
+    	StyledDocument doc = textPane.getStyledDocument();
+    	int start = textPane.getSelectionStart();
+    	int end = textPane.getSelectionEnd();
+    	
+    	if(end > start) {
+    		SimpleAttributeSet attr = new SimpleAttributeSet();
+    		StyleConstants.setStrikeThrough(attr, rootPaneCheckingEnabled);
     		doc.setCharacterAttributes(start, end - start, attr, false);
     	}
     }

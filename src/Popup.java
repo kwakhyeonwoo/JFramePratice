@@ -16,7 +16,7 @@ public class Popup extends JFrame {
         movieAPI = new MovieAPI("de922608690b9703d6b8a689391a10b0");
 
         JPanel contentPane = new JPanel(new GridLayout(3, 3));
-        contentPane.setBackground(new Color(250, 150, 230));
+        contentPane.setBackground(new Color(200, 150, 230));
 
         for (int i = 0; i < 9; i++) {
             JButton button;
@@ -122,8 +122,8 @@ public class Popup extends JFrame {
                 case 7:
                 	new LanguageGame();
                 	break;
-////                case 8:
-////                	showWeatherInfo();
+//                case 8:
+//                	showWeatherInfo();
 //                	break;
                 case 9:
                 	new Note();

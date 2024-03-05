@@ -6,7 +6,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
 
-public class XMLPParser {
+public class XMLParser {
     public static void main(String[] args) {
         try {
             File inputFile = new File("movie_data.xml");
